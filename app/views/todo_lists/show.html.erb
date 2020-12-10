@@ -8,7 +8,13 @@
 <ul class="list-group">
   <% @todo_list.todo_items.each do |todo_item| %>
     <li class="list-group-item">
-      <%= todo_item.description %>
+    	<div class="d-flex justify-content-between">
+    		<span>
+     			 <%= todo_item.description %>
+     		</span>
+     		<%= link_to '#', class: 'btn btn-success' do %>
+     			<i class='fas fa-check'></i>
+     		<% end %>
     </li>
   <% end %>
 </ul>
