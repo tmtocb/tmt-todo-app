@@ -1,8 +1,11 @@
 <div class="card-header d-flex justify-content-between">
-  <span>
-    <%= @todo_list.title %>
-  </span>
-  <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: 'btn btn-secondary btn-sm' %>
+	<div>
+  	<h5 class="m-0"><b><%= @todo_list.title %></b></h5>
+  	<p class="text-secondary m-0"><small>100% Complete (12/12 Todo Items)</small></p>
+  </div>	
+  <div>
+  	<%= link_to 'Edit', edit_todo_list_path(@todo_list), class: 'btn btn-secondary' %>
+	</div>
 </div>
 
 <ul class="list-group">
