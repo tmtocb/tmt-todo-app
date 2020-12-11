@@ -1,7 +1,7 @@
 <div class="card-header d-flex justify-content-between">
 	<div>
   	<h5 class="m-0"><b><%= @todo_list.title %></b></h5>
-  	<p class="text-secondary m-0"><small>100% Complete (12/12 Todo Items)</small></p>
+  	<p class="text-secondary m-0"><small><%= @todo_list.percent_complete %>% Complete (<%= @todo_list.completed_items %>/<%= @todo_list.total_items %> Todo Items)</small></p>
   </div>	
   <div>
   	<%= link_to 'Edit', edit_todo_list_path(@todo_list), class: 'btn btn-secondary' %>
@@ -10,14 +10,14 @@
 
 <div class="card-body">
 	<div class="progress mb-4">
-	  <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+	  <div class="progress-bar bg-info" role="progressbar" style="width: <%= @todo_list.percent_complete %>%" aria-valuenow="<%= @todo_list.percent_complete %>" aria-valuemin="0" aria-valuemax="100"></div>
 	</div>
 	<ul class="list-group">
 	  <% @todo_list.todo_items.each do |todo_item| %>
 	    <li class="list-group-item">
 	    	<div class="d-flex justify-content-between">
 	    		<span>
-	     			 <%= todo_item.description %>
+	     			<%= todo_item.description %>
 	     		</span>
 	     		<%= link_to '#', class: 'btn btn-info' do %>
 	     			<i class='fas fa-check'></i>
@@ -26,3 +26,4 @@
 	  <% end %>
 	</ul>
 </div>
+
