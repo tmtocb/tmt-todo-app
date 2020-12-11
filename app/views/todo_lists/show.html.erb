@@ -1,6 +1,9 @@
 <div class="card-header d-flex justify-content-between">
 	<div>
-  	<h5 class="m-0"><b><%= @todo_list.title %></b></h5>
+  	<h5 class="m-0">
+  		<b><%= @todo_list.title %></b>
+  		<span class="badge badge-<%= @todo_list.badge_color %>"><%= @todo_list.status %></span>
+  	</h5>
   	<p class="text-secondary m-0"><small><%= @todo_list.percent_complete %>% Complete (<%= @todo_list.completed_items %>/<%= @todo_list.total_items %> Todo Items)</small></p>
   </div>	
   <div>
